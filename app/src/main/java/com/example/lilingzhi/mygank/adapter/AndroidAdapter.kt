@@ -3,6 +3,7 @@ package com.example.lilingzhi.mygank.adapter
 import android.content.Intent
 import android.support.v7.widget.CardView
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -11,10 +12,17 @@ import com.example.lilingzhi.mygank.R
 import com.example.lilingzhi.mygank.WebActivity
 import com.example.lilingzhi.mygank.bean.DataBean
 import kotlinx.android.synthetic.main.item_base.view.*
+import com.zhy.autolayout.utils.AutoUtils
+
+
 
 class AndroidAdapter(var layoutId:Int, var dataLis:List<DataBean>,var sort:Int):BaseQuickAdapter<DataBean,BaseViewHolder>(layoutId,dataLis){
 
+
+
     override fun convert(helper: BaseViewHolder?, item: DataBean?) {
+
+
 
         helper!!.setText(R.id.tv_title,item?.desc)
                 .setText(R.id.tv_name,item?.who)
@@ -47,5 +55,11 @@ class AndroidAdapter(var layoutId:Int, var dataLis:List<DataBean>,var sort:Int):
         super.onViewRecycled(holder)
 
     }
+
+    override fun createBaseViewHolder(view: View?): BaseViewHolder {
+        AutoUtils.autoSize(view)
+        return super.createBaseViewHolder(view)
+    }
+
 
 }

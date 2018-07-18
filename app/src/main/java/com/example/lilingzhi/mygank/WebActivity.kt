@@ -10,14 +10,15 @@ import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.zzw.componentbase.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_web.*
 
-class WebActivity : AppCompatActivity() {
+class WebActivity : BaseActivity() {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_web
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web)
-
+    override fun initView() {
         var url= intent.getStringExtra("url")
         wv.loadUrl(url)
         wv.webChromeClient=wvChromeClient
@@ -31,8 +32,13 @@ class WebActivity : AppCompatActivity() {
         actionBar?.title="在activity、fragment的使用"
         actionBar?.setHomeButtonEnabled(true)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun initData() {
 
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()

@@ -5,19 +5,15 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.example.lilingzhi.mygank.adapter.MainViewPageAdapter
 import com.example.lilingzhi.mygank.fragment.AndroidFragment
+import com.zzw.componentbase.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
 
-     var  titles:List<String> = arrayListOf("all","福利","Android","iOS","休息视频","拓展资源","前端")
-    lateinit var fmList:List<Fragment>
-
-    lateinit var vpadapter:MainViewPageAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+    override fun initView() {
         val allFm=AndroidFragment()
         allFm.title=titles[0]
         val welfareFm=AndroidFragment()
@@ -41,20 +37,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    override fun initData() {
 
     }
+
+    var  titles:List<String> = arrayListOf("all","福利","Android","iOS","休息视频","拓展资源","前端")
+    lateinit var fmList:List<Fragment>
+
+    lateinit var vpadapter:MainViewPageAdapter
+
+
 }
