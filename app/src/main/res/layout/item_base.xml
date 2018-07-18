@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10px"
+    app:cardCornerRadius="15px"
+    android:id="@+id/cv">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:textSize="@dimen/titleSize"
+            android:textColor="@color/titleColor"
+            style="@style/TvCommontStyle" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:textSize="@dimen/titleSize"
+            android:textColor="@color/titleColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_title"/>
+
+        <TextView
+            android:id="@+id/tv_name_imm"
+            android:textSize="@dimen/titleSize"
+            android:textColor="@color/titleColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作者："
+            android:layout_toLeftOf="@+id/tv_name"
+            android:layout_alignTop="@id/tv_name"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_below="@id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
