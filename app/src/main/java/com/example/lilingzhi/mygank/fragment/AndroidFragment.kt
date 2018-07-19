@@ -103,5 +103,10 @@ class AndroidFragment():BaseFragment(){
                     }
                 })
     }
+    override fun onDestroy() {
+        super.onDestroy()
+        OkGo.getInstance().cancelTag(this)
+    }
+
 
 }
